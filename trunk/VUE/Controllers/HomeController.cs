@@ -126,6 +126,12 @@ namespace VUE.Controllers
         public ActionResult Radio() {
             return View();
         }
+
+        public ActionResult Field()
+        {
+            return View();
+
+        }
     }
 
 }
