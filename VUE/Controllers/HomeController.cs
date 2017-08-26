@@ -132,6 +132,11 @@ namespace VUE.Controllers
             return View();
 
         }
+        public ActionResult Badge()
+        {
+            return View();
+
+        }
     }
 
 }

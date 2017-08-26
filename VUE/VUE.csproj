@@ -184,6 +184,7 @@
     <Content Include="Views\Home\Checklist.cshtml" />
     <Content Include="Views\Home\Radio.cshtml" />
     <Content Include="Views\Home\Field.cshtml" />
+    <Content Include="Views\Home\Badge.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
