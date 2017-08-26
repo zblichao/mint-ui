@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "CellSwipe";
+}
+
+ 
+<div id="app">
+    <mt-header fixed title="CellSwipe">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <div style="margin-top:44px">
+        <mt-cell-swipe title="text"
+                       :right="[
+    {
+      content: 'Delete',
+      style: { background: 'red', color: '#fff' },
+      handler: () => this.$messagebox('delete')
+    }
+  ]">
+
+        </mt-cell-swipe>
+        <mt-cell-swipe title="text"
+                       :right="[
+    {
+      content: 'Delete',
+      style: { background: 'red', color: '#fff' },
+      handler: () => this.$messagebox('delete')
+    }
+  ]"></mt-cell-swipe>
+    </div>
+
+
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                selected: "3"
+            }
+        })
+    </script>
+}
+
+
+
+
+
+
+
+

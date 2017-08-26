@@ -93,6 +93,14 @@ namespace VUE.Controllers
         public ActionResult Button() {
             return View();
         }
+        public ActionResult Cell() {
+            return View();
+        }
+
+        public ActionResult CellSwipe()
+        {
+            return View();
+        }
     }
 
 }

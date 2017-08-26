@@ -175,6 +175,8 @@
     <Content Include="Views\Home\Tabbar.cshtml" />
     <Content Include="Views\Home\Navbar.cshtml" />
     <Content Include="Views\Home\Button.cshtml" />
+    <Content Include="Views\Home\Cell.cshtml" />
+    <Content Include="Views\Home\CellSwipe.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
