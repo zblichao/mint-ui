@@ -177,6 +177,7 @@
     <Content Include="Views\Home\Button.cshtml" />
     <Content Include="Views\Home\Cell.cshtml" />
     <Content Include="Views\Home\CellSwipe.cshtml" />
+    <Content Include="Views\Home\Spinner.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

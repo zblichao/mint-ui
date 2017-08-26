@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Spinner";
+}
+
+ 
+<div id="app">
+    <mt-header fixed title="Spinner">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <div style="margin-top:44px">
+        <h4>accepts a 0-3 number  </h4> 
+        <mt-spinner type="snake"></mt-spinner>
+        <mt-spinner type="double-bounce"></mt-spinner>
+        <mt-spinner type="triple-bounce"></mt-spinner>
+        <mt-spinner type="fading-circle"></mt-spinner>
+
+        <h4>accepts a 0-3 number  </h4> 
+        <mt-spinner :type="0"></mt-spinner>
+        <mt-spinner :type="1"></mt-spinner>
+        <mt-spinner :type="2"></mt-spinner>
+        <mt-spinner :type="3"></mt-spinner>
+
+        <h4>Custom color   </h4>
+        <mt-spinner color="#26a2ff"></mt-spinner>
+        <mt-spinner color="rgb(100, 100, 100)"></mt-spinner>
+        <mt-spinner color="yellow"></mt-spinner>
+        <h4>Custom color   </h4>
+
+        <mt-spinner size="60"></mt-spinner>
+
+    </div>
+
+
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                selected: "3"
+            }
+        })
+    </script>
+}
+
+
+
+
+
+
+
+
+

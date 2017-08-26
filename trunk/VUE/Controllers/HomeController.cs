@@ -101,6 +101,9 @@ namespace VUE.Controllers
         {
             return View();
         }
+        public ActionResult Spinner() {
+            return View();
+        }
     }
 
 }
