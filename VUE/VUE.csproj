@@ -173,6 +173,7 @@
     <Content Include="Views\Home\PaletteButton.cshtml" />
     <Content Include="Views\Home\Header.cshtml" />
     <Content Include="Views\Home\Tabbar.cshtml" />
+    <Content Include="Views\Home\Navbar.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
