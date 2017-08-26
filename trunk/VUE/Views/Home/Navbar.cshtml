@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Navbar";
+}
+
+ 
+<div id="app">
+    <mt-header fixed title="Navbar">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <mt-navbar v-model="selected" style="margin-top:44px">
+        <mt-tab-item id="1">option A</mt-tab-item>
+        <mt-tab-item id="2">option B</mt-tab-item>
+        <mt-tab-item id="3">option C</mt-tab-item>
+    </mt-navbar>
+
+    <!-- tab-container -->
+    <mt-tab-container v-model="selected">
+        <mt-tab-container-item id="1">
+            <mt-cell v-for="n in 10" :title="'content ' + n" />
+        </mt-tab-container-item>
+        <mt-tab-container-item id="2">
+            <mt-cell v-for="n in 4" :title="'content ' + n" />
+        </mt-tab-container-item>
+        <mt-tab-container-item id="3">
+            <mt-cell v-for="n in 6" :title="'content ' + n" />
+        </mt-tab-container-item>
+    </mt-tab-container>
+
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                selected:"3"
+            }
+        })
+    </script>
+}
+
+
+
+
+

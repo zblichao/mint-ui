@@ -85,5 +85,11 @@ namespace VUE.Controllers
         {
             return View();
         }
+
+        public ActionResult Navbar()
+        {
+            return View();
+        }
     }
+
 }
