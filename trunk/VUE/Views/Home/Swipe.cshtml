@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Swipe";
+}
+
+ 
+<div id="app">
+    <mt-header fixed title="Swipe">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <p style="margin-top:44px;">基础用法</p>
+    <mt-swipe :auto="4000" style="width: 100%; height: 200px; background: red;">
+        <mt-swipe-item>1</mt-swipe-item>
+        <mt-swipe-item>2</mt-swipe-item>
+        <mt-swipe-item>3</mt-swipe-item>
+    </mt-swipe>
+    <p   style="margin-top:44px;">隐藏 indicators</p>
+    <mt-swipe :show-indicators="false" :auto="4000" style="width: 100%; height: 200px; background: red;">
+        <mt-swipe-item>1</mt-swipe-item>
+        <mt-swipe-item>2</mt-swipe-item>
+        <mt-swipe-item>3</mt-swipe-item>
+    </mt-swipe>
+    <p style="margin-top:44px;">取消自动播放</p>
+    <mt-swipe :show-indicators="false" :auto="0" style="width: 100%; height: 200px; background: red;">
+        <mt-swipe-item>1</mt-swipe-item>
+        <mt-swipe-item>2</mt-swipe-item>
+        <mt-swipe-item>3</mt-swipe-item>
+    </mt-swipe>
+    <p style="margin-top:44px;">change 事件</p>
+    <mt-swipe   v-on:change="handleChange"   style="width: 100%; height: 200px; background: red;">
+        <mt-swipe-item>1</mt-swipe-item>
+        <mt-swipe-item>2</mt-swipe-item>
+        <mt-swipe-item>3</mt-swipe-item>
+    </mt-swipe>
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            methods: {
+                handleChange: function (index) {
+                    this.$toast("" + index);
+                }
+            }
+        })
+    </script>
+}

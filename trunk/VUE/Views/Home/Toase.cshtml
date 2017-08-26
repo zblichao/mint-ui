@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Toase";
+}
+
+<div id="app">
+    <mt-header  fixed title="Toase">     
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>       
+    </mt-header>
+    <div style="margin-top:44px">
+        <mt-button v-on:click.native="handleClick1"  type="default" style="width:100%;margin-top:10px;">点击弹出Toast</mt-button>
+        <mt-button v-on:click.native="handleClick2"  type="default" style="width: 100%;margin-top:10px;">点击弹出带icon的toast</mt-button>
+        <mt-button v-on:click.native="handleClick3"  type="default" style="width: 100%; margin-top: 10px;">自定义Toast位置</mt-button>
+    </div>
+  
+ </div>
+@section scripts{
+    <script>
+       
+    new Vue({
+        el: '#app',
+        methods: {
+            handleClick1: function () {
+                this.$toast('Hello world!')
+            },
+            handleClick2: function () {
+                this.$toast({
+                    message: '操作成功',
+                    iconClass: 'mint-toast-icon mintui mintui-success'
+                })
+            },
+            handleClick3: function () {
+                this.$toast({
+                    message: '操作成功',
+                    position: 'bottom'
+                })
+            }
+        }
+    })
+    </script>
+}

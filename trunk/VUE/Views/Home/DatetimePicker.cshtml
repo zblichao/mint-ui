@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "DatetimePicker";
+}
+
+ 
+<div id="app">
+    <mt-header fixed title="DatetimePicker">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <div style="margin-top:44px">
+        <div style="margin-top:44px">
+            <mt-button v-on:click.native="handleClick1" type="default" style="width:100%;margin-top:10px;">点击弹出Time picker</mt-button>
+            <mt-button v-on:click.native="handleClick2" type="default" style="width: 100%;margin-top:10px;">点击弹出自定义Time picker</mt-button>
+            <mt-button v-on:click.native="handleClick3" type="default" style="width: 100%; margin-top: 10px;">点击弹出自定义Date picker</mt-button>
+            <mt-button v-on:click.native="handleClick4" type="default" style="width: 100%; margin-top: 10px;">点击弹出Date time picker</mt-button>
+
+         </div>
+        <mt-datetime-picker ref="picker"
+                            type="time"
+                            v-model="pickerValue">
+        </mt-datetime-picker>
+        <h1> {{pickerValue}}</h1>  
+        <mt-datetime-picker ref="picker1"
+                            v-model="pickerValue1"
+                            type="time"
+                            hour-format="{value}时"
+                            minute-format="{value}分">
+        </mt-datetime-picker>
+        <h1>{{pickerValue1}} </h1>
+        <mt-datetime-picker ref="picker2"
+                            v-model="pickerValue2"
+                            type="date"
+                            year-format="{value} 年"
+                            month-format="{value} 月"
+                            date-format="{value} 日">
+        </mt-datetime-picker>
+        <h1>{{pickerValue2}} </h1>
+        <mt-datetime-picker ref="picker3"
+                            v-model="pickerValue3"
+                            type="datetime"
+                            year-format="{value}"
+                            month-format="{value}"
+                            date-format="{value}"
+                             hour-format="{value}时"
+                            minute-format="{value}分">
+        </mt-datetime-picker>
+        <h1>{{pickerValue3}} </h1>
+    </div>
+
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                pickerValue: "",
+                pickerValue1: "",
+                pickerValue2: "",
+                pickerValue3: ""
+                
+
+            },
+            methods: {
+                handleClick1: function () {
+                    this.$refs.picker.open();
+                },
+                handleClick2: function () {
+                    this.$refs.picker1.open();
+                },
+                handleClick3: function () {
+                    this.$refs.picker2.open();
+                },
+                handleClick4: function () {
+                    this.$refs.picker3.open();
+                }
+
+
+            }
+        })
+    </script>
+}
+
+
+
+
+

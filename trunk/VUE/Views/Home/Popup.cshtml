@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Popup";
+}
+
+ 
+<div id="app">
+    <mt-header fixed title="Popup">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <div style="margin-top:44px">
+        <mt-button v-on:click.native="handleClick1" type="default" style="width:100%;margin-top:10px;">中部弹出Popup</mt-button>
+        <mt-button v-on:click.native="handleClick2" type="default" style="width: 100%;margin-top:10px;">上侧弹出Popup</mt-button>
+        <mt-button v-on:click.native="handleClick3" type="default" style="width: 100%; margin-top: 10px;">左侧弹出Popup</mt-button>
+        <mt-button v-on:click.native="handleClick4" type="default" style="width: 100%; margin-top: 10px;">下侧弹出Popup</mt-button>
+
+    </div>
+    <mt-popup v-model="popupVisible1" popup-transition="popup-fade" style="width:70%;height:200px;">
+        <div>这是下面弹出的popup</div>
+    </mt-popup>
+    <mt-popup v-model="popupVisible2">
+        <div>这是下面弹出的popup</div>
+    </mt-popup>
+    <mt-popup v-model="popupVisible3"
+              :modal="popupVisible2" :closeonclickmodal="popupVisible2">
+        <div>左侧弹出Popup</div>
+    </mt-popup>
+    <mt-popup v-model="popupVisible4" style="width:100%;height:200px;"
+              position="bottom">
+        <div>这是下面弹出的popup</div>
+    </mt-popup>
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                popupVisible1: false,
+                popupVisible2: false,
+                popupVisible3: false,
+                popupVisible4: false
+            },
+            methods: {
+                handleClick1: function () {
+                    this.popupVisible1 = true;
+                },
+                handleClick2: function () {
+                    this.popupVisible2 = true;
+                },
+                handleClick3: function () {
+                    this.popupVisible3 = true;
+                },
+                handleClick4: function () {
+                    this.popupVisible4 = true;
+                }
+            }
+        })
+    </script>
+}

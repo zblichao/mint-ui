@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Loadmore";
+}
+
+
+<div id="app">
+    <mt-header fixed title="Loadmore">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <div style="margin-top:44px">
+        <mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" ref="loadmore">
+            <ul>
+                <li v-for="item in list">{{ item }}</li>
+            </ul>
+        </mt-loadmore>
+    
+    </div>
+
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                allLoaded :false,
+                list:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]                  
+            },
+            methods: {
+                loadTop: function () {
+                    this.list.splice(0, this.list.length);
+                    for (var i = 1; i< 30; i++)
+                    {
+                        this.list.push(i);
+                    }
+                    this.allLoaded = false;// 若数据已全部获取完毕
+
+                    this.$refs.loadmore.onTopLoaded();
+                },
+                loadBottom: function () {
+                    this.allLoaded = true;// 若数据已全部获取完毕
+
+                    for (var i = 1; i < 10; i++) {
+                        this.list.push(i);
+                    }
+                    this.$refs.loadmore.onBottomLoaded();
+                }
+                 
+            }
+        })
+    </script>
+}

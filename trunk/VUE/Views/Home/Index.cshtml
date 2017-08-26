@@ -1,0 +1,50 @@
+﻿<div id="app">
+    <mt-header fixed title="Mint-ui Demo"></mt-header>
+    <div style="margin-top:44px">
+        <mt-cell v-for="item in list" :title="item.title"
+                 :to="item.to"
+                 :value="item.value" is-link>
+        </mt-cell>
+    </div>
+</div>
+@section scripts{    
+    <script>
+    new Vue({
+        el: '#app',
+        data: {
+            list: [
+            { title: "Toase", to: "@Url.Action("Toase", "Home")", value: "" },
+            { title: "Indicator", to: "@Url.Action("Indicator", "Home")", value: "" },
+            { title: "Loadmore", to: "@Url.Action("Loadmore", "Home")", value: "" },
+            { title: "Infinite scroll", to: "@Url.Action("InfiniteScroll", "Home")", value: "" },
+            { title: "Message box", to: "@Url.Action("MessageBox", "Home")", value: "" },
+            { title: "Action sheet", to: "@Url.Action("ActionSheet", "Home")", value: "" },
+            { title: "Popup", to: "@Url.Action("Popup", "Home")", value: "" },
+            { title: "Swipe", to: "@Url.Action("Swipe", "Home")", value: "" },
+            { title: "Lazy load", to: "@Url.Action("LazyLoad", "Home")", value: "" },
+            { title: "Range", to: "@Url.Action("Range", "Home")", value: "" },
+            { title: "Progress", to: "@Url.Action("Progress", "Home")", value: "" },
+            { title: "Picker", to: "@Url.Action("Picker", "Home")", value: "" },
+            { title: "Datetime Picker", to: "@Url.Action("DatetimePicker", "Home")", value: "" },
+            { title: "Index List", to: "@Url.Action("IndexList", "Home")", value: "" },
+            { title: "Palette Button (2.0)", to: "@Url.Action("PaletteButton", "Home")", value: "" },
+            { title: "Header", to: "@Url.Action("Header", "Home")", value: "" },
+            { title: "Tabbar", to: "@Url.Action("Tabbar", "Home")", value: "" },
+            { title: "Navbar", to: "@Url.Action("Navbar", "Home")", value: "" },
+            { title: "Button", to: "@Url.Action("Button", "Home")", value: "" },
+            { title: "Cell", to: "@Url.Action("Cell", "Home")", value: "" },
+            { title: "Cell Swipe", to: "@Url.Action("CellSwipe", "Home")", value: "" },
+            { title: "Spinner", to: "@Url.Action("Spinner", "Home")", value: "" },
+            { title: "TabContainer", to: "@Url.Action("TabContainer", "Home")", value: "" },
+            { title: "Search", to: "@Url.Action("Search", "Home")", value: "" },
+            { title: "Form Components", to: "@Url.Action("FormComponents", "Home")", value: "" },
+            { title: "Switch", to: "@Url.Action("Switch", "Home")", value: "" },
+            { title: "Checklist", to: "@Url.Action("Checklist", "Home")", value: "" },
+            { title: "Radio", to: "@Url.Action("Radio", "Home")", value: "" },
+            { title: "Field", to: "@Url.Action("Field", "Home")", value: "" },
+            { title: "Badge", to: "@Url.Action("Badge", "Home")", value: "" },
+            ]
+        } 
+    })
+</script>
+}

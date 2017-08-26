@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "IndexList";
+}
+
+ <div id="app">
+     <mt-header fixed title="IndexList">
+         <a href="@Url.Action("Index","Home")" slot="left">
+             <mt-button icon="back">返回</mt-button>
+         </a>
+        
+     </mt-header>
+     <div style="margin-top:44px;">
+         <mt-index-list>
+             <mt-index-section v-for="item in list" :index="item.index">
+                 <mt-cell v-for="title in item.data" :title="title"></mt-cell>
+             </mt-index-section>
+             
+         </mt-index-list>
+     </div>
+</div>
+@section scripts{
+    <script>
+    new Vue({
+        el: '#app',
+        data: {
+            list: [
+                { index: "a", data: ["a1","a2","a3","a4","a5"] },
+                { index: "b", data: ["b1", "b2", "b3", "b4", "b5"] },
+                { index: "c", data: ["c1", "c2", "c3", "c4", "c5"] },
+
+
+                
+            ]
+        }
+        
+    })
+    </script>
+}
