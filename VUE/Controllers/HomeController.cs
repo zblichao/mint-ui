@@ -108,6 +108,10 @@ namespace VUE.Controllers
         public ActionResult TabContainer() {
             return View();
         }
+
+        public ActionResult Search() {
+            return View();
+        }
     }
 
 }

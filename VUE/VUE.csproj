@@ -179,6 +179,7 @@
     <Content Include="Views\Home\CellSwipe.cshtml" />
     <Content Include="Views\Home\Spinner.cshtml" />
     <Content Include="Views\Home\TabContainer.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
