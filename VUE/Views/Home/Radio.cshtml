@@ -3,5 +3,82 @@
     ViewBag.Title = "Radio";
 }
 
-<h2>Radio</h2>
+ 
+<div id="app">
+    <mt-header fixed title="Checklist">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <mt-radio title="radio list"
+              v-model="value1"
+              :options="['optionA', 'optionB', 'optionC']">
+    </mt-radio>
+    <h4>{{value1}}</h4>
+    <mt-radio title="radio list"
+              v-model="value2"
+              :options="options">
+    </mt-radio>
+    <h4>{{value2}}</h4>
+
+    <mt-radio align="right"
+              v-model="value3"
+              :options="options">
+    </mt-radio>
+    <h4>{{value3}}</h4>
+</div>
+
+
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                value1: "",
+                value2: "",
+                value3: "",
+                options: [
+                    {
+                        label: 'disabled option',
+                        value: 'valueF',
+                        disabled: true
+                    },
+                    {
+                        label: 'checked disabled',
+                        value: 'valueE',
+                        disabled: true
+                    },
+                    {
+                        label: 'optionA',
+                        value: 'valueA'
+                    },
+                    {
+                        label: 'optionB',
+                        value: 'valueB'
+                    },
+                     {
+                         label: 'optionC',
+                         value: 'valueC'
+                     }
+                ]
+            }
+        })
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
