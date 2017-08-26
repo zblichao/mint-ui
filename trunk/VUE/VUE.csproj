@@ -172,6 +172,7 @@
     <Content Include="Views\Home\IndexList.cshtml" />
     <Content Include="Views\Home\PaletteButton.cshtml" />
     <Content Include="Views\Home\Header.cshtml" />
+    <Content Include="Views\Home\Tabbar.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
