@@ -77,7 +77,12 @@ namespace VUE.Controllers
         {
             return View();
         }
-        public ActionResult Header() {
+        public ActionResult Header()
+        {
+            return View();
+        }
+        public ActionResult Tabbar()
+        {
             return View();
         }
     }
