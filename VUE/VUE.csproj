@@ -183,6 +183,7 @@
     <Content Include="Views\Home\Switch.cshtml" />
     <Content Include="Views\Home\Checklist.cshtml" />
     <Content Include="Views\Home\Radio.cshtml" />
+    <Content Include="Views\Home\Field.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
