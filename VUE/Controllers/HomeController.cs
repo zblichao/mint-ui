@@ -116,6 +116,12 @@ namespace VUE.Controllers
         public ActionResult Switch() {
             return View();
         }
+
+        public ActionResult Checklist()
+        {
+            return View();
+
+        }
     }
 
 }

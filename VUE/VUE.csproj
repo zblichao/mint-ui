@@ -181,6 +181,7 @@
     <Content Include="Views\Home\TabContainer.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Home\Switch.cshtml" />
+    <Content Include="Views\Home\Checklist.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
