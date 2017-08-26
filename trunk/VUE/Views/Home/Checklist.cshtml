@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Checklist";
+}
+
+
+<div id="app">
+    <mt-header fixed title="Checklist">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <mt-checklist title="checkbox list"
+                  v-model="value1"
+                  :options="['optionA', 'optionB', 'optionC']">
+    </mt-checklist>
+    <h4>{{value1}}</h4> 
+    <mt-checklist v-model="value2"
+              :options="options">
+    </mt-checklist>
+    <h4>{{value2}}</h4> 
+
+    <mt-checklist :max="2"
+                  v-model="value3"
+                  :options="options">
+    </mt-checklist>
+    </div>
+
+
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                value1: [],
+                value2: [],
+                value3: [],
+                options: [
+                    {
+                        label: 'disabled option',
+                        value: 'valueF',
+                        disabled: true
+                    },
+                    {
+                        label: 'checked disabled',
+                        value: 'valueE',
+                        disabled: true
+                    },
+                    {
+                        label: 'optionA',
+                        value: 'valueA'
+                    },
+                    {
+                        label: 'optionB',
+                        value: 'valueB'
+                    },
+                     {
+                         label: 'optionC',
+                         value: 'valueC'
+                     }
+                ]
+            }
+        })
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
