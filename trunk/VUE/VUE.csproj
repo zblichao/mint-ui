@@ -182,6 +182,7 @@
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Home\Switch.cshtml" />
     <Content Include="Views\Home\Checklist.cshtml" />
+    <Content Include="Views\Home\Radio.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
