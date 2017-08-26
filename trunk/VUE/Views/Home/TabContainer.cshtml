@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "TabContainer";
+}
+
+ 
+<div id="app">
+    <mt-header fixed title="TabContainer">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <mt-tab-container v-model="selected">
+        <mt-tab-container-item id="tab1">
+            <mt-cell v-for="n in 110" title="tab-container 1"></mt-cell>
+        </mt-tab-container-item>
+        <mt-tab-container-item id="tab2">
+            <mt-cell v-for="n in 5" title="tab-container 2"></mt-cell>
+        </mt-tab-container-item>
+        <mt-tab-container-item id="tab3">
+            <mt-cell v-for="n in 7" title="tab-container 3"></mt-cell>
+        </mt-tab-container-item>
+    </mt-tab-container>
+    
+    <mt-tabbar v-model="selected" fixed>
+        <mt-tab-item id="tab1">
+            <img slot="icon" src="../assets/100x100.png">
+            tab1
+        </mt-tab-item>
+        <mt-tab-item id="tab2">
+            <img slot="icon" src="../assets/100x100.png">
+            tab2
+        </mt-tab-item>
+        <mt-tab-item id="tab3">
+            <img slot="icon" src="../assets/100x100.png">
+            tab3
+        </mt-tab-item>
+        <mt-tab-item id="tab4">
+            <img slot="icon" src="../assets/100x100.png">
+            tab4
+        </mt-tab-item>
+    </mt-tabbar>
+
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                selected: "tab2"
+            }
+        })
+    </script>
+}
+
+
+

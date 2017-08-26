@@ -104,6 +104,10 @@ namespace VUE.Controllers
         public ActionResult Spinner() {
             return View();
         }
+
+        public ActionResult TabContainer() {
+            return View();
+        }
     }
 
 }
