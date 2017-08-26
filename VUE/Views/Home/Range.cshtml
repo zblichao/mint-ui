@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "Range";
+}
+
+<div id="app">
+<mt-header fixed title="Range">
+    <a href="@Url.Action("Index","Home")" slot="left">
+        <mt-button icon="back">返回</mt-button>
+    </a>
+</mt-header>
+<div style="margin-top:44px">
+    <mt-cell title="默认" :label="rangeValue1">
+
+        <mt-range v-model="rangeValue1" style="width:260px"></mt-range>
+
+    </mt-cell>
+    <mt-cell title="预设值value" :label="rangeValue2">
+
+        <mt-range v-model="rangeValue2" style="width:260px"></mt-range>
+
+    </mt-cell>
+    <mt-cell title="左右文字" :label="rangeValue3" >
+
+        <mt-range v-model="rangeValue3" style="width:260px">
+            <div slot="start">0</div>
+            <div slot="end">100</div>
+        </mt-range>
+
+    </mt-cell>
+
+    <mt-cell title="定义步长" :label="rangeValue4">
+
+        <mt-range v-model="rangeValue4" :step="10" style="width:260px"></mt-range>
+
+    </mt-cell>
+    <mt-cell title="定义区间" :label="rangeValue5">
+
+        <mt-range v-model="rangeValue5" :step="10" :min="10" :max="90" style="width:260px">
+            <div slot="start">10</div>
+            <div slot="end">90</div>
+        </mt-range>
+
+    </mt-cell>
+
+    <mt-cell title="定义线宽" :label="rangeValue6">
+
+        <mt-range v-model="rangeValue6" :step="10" :bar-height="5" :min="10" :max="90" style="width:260px">
+            <div slot="start">10</div>
+            <div slot="end">90</div>
+        </mt-range>
+
+    </mt-cell>
+    <mt-cell title="设置为无效" :label="rangeValue7">
+
+        <mt-range v-model="rangeValue7" :disabled="true" style="width:260px">
+            <div slot="start">10</div>
+            <div slot="end">90</div>
+        </mt-range>
+
+    </mt-cell>
+    <mt-cell title="字体大小" :label="rangeValue7">
+
+        <mt-range v-model="rangeValue7" disabled="true" style="width:260px">
+            <div slot="start" style="font-size:29px">10</div>
+            <div slot="end">90</div>
+        </mt-range>
+
+    </mt-cell>
+</div>
+ 
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                rangeValue1: 0,
+                rangeValue2: 10,
+                rangeValue3: 0,
+                rangeValue4: 0,
+                rangeValue5: 0,
+                rangeValue6: 0,
+                rangeValue7: 10
+            },
+            methods: {
+                handleClick1: function () {
+                    this.popupVisible1 = true;
+                } 
+                
+            }
+        })
+    </script>
+}
+
+

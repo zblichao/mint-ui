@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "InfiniteScroll";
+}
+
+
+
+<div id="app">
+    <mt-header fixed title="InfiniteScroll">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <div style="margin-top:44px">
+        <ul v-infinite-scroll="loadMore"
+            infinite-scroll-disabled="loading"
+            infinite-scroll-distance="10">
+            <li v-for="item in list">{{ item }}</li>
+        </ul>
+    </div>
+
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                loading:false,
+                list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+            },
+            methods: {
+                loadMore: function () {
+                    this.loading = true;
+                    setTimeout(function(){
+                        let last = this.list[this.list.length - 1];
+                    for (let i = 1; i <= 10; i++) {
+                        this.list.push(last + i);
+                    }
+                    this.loading = false;
+                    }.bind(this), 2500);
+                }
+                
+            }
+        })
+    </script>
+}
+
+

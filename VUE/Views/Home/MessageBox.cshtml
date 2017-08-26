@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "MessageBox";
+}
+
+
+<div id="app">
+    <mt-header fixed title="MessageBox">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <div style="margin-top:44px">
+        <mt-button v-on:click.native="handleClick1" type="default" style="width:100%;margin-top:10px;">打开alert提示框</mt-button>
+        <mt-button v-on:click.native="handleClick2" type="default" style="width: 100%;margin-top:10px;">打开confirm提示框</mt-button>
+        <mt-button v-on:click.native="handleClick3" type="default" style="width: 100%; margin-top: 10px;">打开promot提示框</mt-button>
+    </div>
+
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            methods: {
+                handleClick1: function () {
+                    this.$messagebox.alert('提示', '操作成功');
+                },
+                handleClick2: function () {
+                    this.$messagebox.confirm('确定执行此操作?').then(function () { this.showalert();}.bind(this));
+                },
+                handleClick3: function () {
+                    this.$messagebox.prompt('请输入姓名?').then(function (data) { this.showprompt(data); }.bind(this));
+
+                },
+                showalert: function () {
+                     alert("点击了确定"); 
+                },
+                showprompt: function (data) {
+                    alert("内容：" + data.value + "点击了" + data.action);
+                }
+            }
+        })
+    </script>
+}

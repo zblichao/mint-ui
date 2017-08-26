@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Progress";
+}
+
+<div id="app">
+    <mt-header fixed title="Progress">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <div style="margin-top:44px">
+        <mt-cell title="默认" :label="rangeValue1">
+
+            <mt-progress :value="rangeValue1" bar-height="5" style="width:260px;"></mt-progress>
+
+
+        </mt-cell>
+        <mt-cell title="预设值value" :label="rangeValue2">
+
+            <mt-progress :value="rangeValue2" style="width:260px;">
+                <div slot="start">0%</div>
+                <div slot="end">100%</div>
+            </mt-progress>
+
+        </mt-cell>
+        
+    </div>
+
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                rangeValue1: 50,
+                rangeValue2: 90,
+               
+            },
+            methods: {
+                handleClick1: function () {
+                    this.popupVisible1 = true;
+                }
+
+            }
+        })
+    </script>
+}
+
+
+
+
+
+ 

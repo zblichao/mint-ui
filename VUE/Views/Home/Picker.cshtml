@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Picker";
+}
+
+ 
+<div id="app">
+    <mt-header fixed title="Picker">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <div style="margin-top:44px">
+        <mt-cell :title="val1">
+            <mt-picker :slots="slots" v-on:change="onValuesChange" style="width:260px"></mt-picker>
+        </mt-cell>
+        <mt-cell :title="val2">
+            <mt-picker :slots="slots1" v-on:change="onValuesChange1" style="width:260px"></mt-picker>
+        </mt-cell>
+    </div>
+
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                val1: "1",
+                val2: "1",
+                slots: [
+                    {
+                        flex: 1,
+                        values: ['2015-01', '2015-02', '2015-03', '2015-04', '2015-05', '2015-06'],
+                        className: 'slot1',
+                        textAlign: 'center'
+                    } 
+                ],
+                slots1: [
+                    {
+                        flex: 1,
+                        values: ['2015-01', '2015-02', '2015-03', '2015-04', '2015-05', '2015-06'],
+                        className: 'slot1',
+                        textAlign: 'right'
+                    }, {
+                        divider: true,
+                        content: '-',
+                        className: 'slot2'
+                    }, {
+                        flex: 1,
+                        values: ['2015-01', '2015-02', '2015-03', '2015-04', '2015-05', '2015-06'],
+                        className: 'slot3',
+                        textAlign: 'left'
+                    }
+                ]
+              
+            },
+            methods: {
+                onValuesChange: function (picker, values) {
+                    this.val1 = values[0];
+                 },
+                onValuesChange1: function (picker, values) {
+                    if (values[0] > values[1]) {
+                        picker.setSlotValue(1, values[0]);
+                    }
+                    this.val2 = values[0]+"-"+values[1];
+                }
+
+
+            }
+        })
+    </script>
+}
+
+
+
+

@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Header";
+}
+
+ <div id="app">
+     <mt-header fixed title="Header">
+         <a href="@Url.Action("Index","Home")" slot="left">
+             <mt-button icon="back">返回</mt-button>
+         </a>
+     </mt-header>
+    <div style="margin-top:44px">
+        <mt-header fixed title="固定在顶部"></mt-header>
+        <mt-header title="标题过长会隐藏后面的内容啊哈哈哈哈">
+            <a href="/" slot="left">
+                <mt-button icon="back">返回</mt-button>
+            </a>
+            <mt-button icon="more" slot="right"></mt-button>
+        </mt-header>
+        <mt-header title="多个按钮">
+            <a href="/" slot="left">
+                <mt-button icon="back">返回</mt-button>
+                <mt-button>关闭</mt-button>
+            </a>
+            <mt-button icon="more" slot="right" v-on:click.native="handleClose"></mt-button>
+        </mt-header>
+    </div>
+</div>
+@section scripts{
+    <script>
+        new Vue({
+            el: '#app',
+            methods: {
+                handleClose: function () {
+                    alert("");
+                }
+            }
+        }
+      )
+    </script>
+}

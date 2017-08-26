@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Indicator";
+}
+
+
+<div id="app">
+    <mt-header fixed title="Indicator">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <div style="margin-top:44px">
+        <mt-button v-on:click.native="handleClick1" type="default" style="width:100%;margin-top:10px;">点击弹出Indicator</mt-button>
+        <mt-button v-on:click.native="handleClick2" type="default" style="width: 100%;margin-top:10px;">可配置spinner</mt-button>
+        <mt-button v-on:click.native="handleClick3" type="default" style="width: 100%; margin-top: 10px;">点击弹出带有文字的Indicator</mt-button>
+   
+     </div>
+
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            methods: {
+                handleClick1: function () {
+                    this.$indicator.open();
+                    setTimeout(function() {
+                        this.$indicator.close();
+                    }.bind(this), 2000);
+                },
+                handleClick2: function () {
+                    this.$indicator.open('Loading...');
+                    setTimeout(function () {
+                        this.$indicator.close();
+                    }.bind(this), 2000);
+                },
+                handleClick3: function () {
+                    this.$indicator.open({
+                        text: 'Loading...',
+                        spinnerType: 'fading-circle'
+                    });
+                    setTimeout(function () {
+                        this.$indicator.close();
+                    }.bind(this), 2000);
+                }
+            }
+        })
+    </script>
+}

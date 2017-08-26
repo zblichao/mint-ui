@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "ActionSheet";
+}
+
+ 
+<div id="app">
+    <mt-header fixed title="ActionSheet">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <div style="margin-top:44px">
+        <mt-button v-on:click.native="handleClick1" type="default" style="width:100%;margin-top:10px;">点击上拉Action Sheet</mt-button>
+        <mt-button v-on:click.native="handleClick2" type="default" style="width: 100%;margin-top:10px;">不带取消按钮的Action Sheet</mt-button>
+        <mt-actionsheet :actions="actions"
+                        v-model="sheetVisible">
+        </mt-actionsheet>
+        <mt-actionsheet :actions="actions" cancel-text="这是取消按钮空字符不显示"
+                        v-model="sheetNoCalcel">
+        </mt-actionsheet>
+
+
+        
+        {{indexselect}}
+    </div>
+
+</div>
+@section scripts{
+    <script>
+
+    var vu=    new Vue({
+            el: '#app',
+            data: { 
+                indexselect:-1,
+                sheetVisible: false,
+                sheetNoCalcel:false,
+                actions: [
+                    { name: "1", method: function () { vu.showAlert(1) } },
+                    { name: "2", method: function () { vu.showAlert(2) } },
+                    { name: "3", method: function () { vu.showAlert(3) } }
+                ]
+            },
+            methods: {
+                handleClick1: function () {
+                    this.sheetVisible = true;
+               
+                },
+                handleClick2: function () {
+                    this.sheetNoCalcel = true;
+                },
+                showAlert: function (data) {
+                    this.indexselect = data;
+                }
+                 
+            }
+        })
+    </script>
+}
+
+
