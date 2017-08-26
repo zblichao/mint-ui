@@ -90,6 +90,9 @@ namespace VUE.Controllers
         {
             return View();
         }
+        public ActionResult Button() {
+            return View();
+        }
     }
 
 }
