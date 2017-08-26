@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Badge";
+}
+
+ 
+<div id="app">
+    <mt-header fixed title="Badge">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <div style="margin-top:44px">
+        <mt-badge size="small">30</mt-badge>
+        <mt-badge size="normal">10</mt-badge>
+        <mt-badge size="large">10</mt-badge>
+        <mt-badge type="primary">30</mt-badge>
+        <mt-badge type="error">10</mt-badge>
+        <mt-badge type="success">10</mt-badge>
+        <mt-badge type="warning">10</mt-badge>
+        <mt-badge size="small" color="#888">custom color</mt-badge>
+
+    </div>
+
+</div>
+@section scripts{
+    <script>
+
+        var vu = new Vue({
+            el: '#app',
+           
+        })
+    </script>
+}
+
+
+
