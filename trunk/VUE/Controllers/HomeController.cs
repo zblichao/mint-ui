@@ -112,6 +112,10 @@ namespace VUE.Controllers
         public ActionResult Search() {
             return View();
         }
+
+        public ActionResult Switch() {
+            return View();
+        }
     }
 
 }

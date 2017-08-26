@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Switch";
+}
+
+ 
+<div id="app">
+    <mt-header fixed title="Switch">
+        <a href="@Url.Action("Index","Home")" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
+    <div style="margin-top:44px;">
+
+        <mt-switch v-model="value1"></mt-switch>
+        <h4> {{value1}}</h4>  
+        <mt-switch v-model="value2">Switch</mt-switch>
+        <h4> {{value2}}</h4>  
+    </div>
+    
+
+
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                value1: false,
+                value2: true
+            }
+        })
+    </script>
+}
+
+
+
+
+
