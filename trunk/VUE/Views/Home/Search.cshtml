@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+
+ 
+<div id="app">
+    
+      
+    <mt-search v-model="value">
+        <mt-cell v-for="item in result"
+                 :title="item.title"
+                 :value="item.value">
+        </mt-cell>
+    </mt-search>
+</div>
+@section scripts{
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                value:"",
+                result: [
+                    { title: "11", value: "11" },
+                    { title: "12", value: "12" },
+                    { title: "13", value: "13" },
+                    { title: "14", value: "14" },
+                    { title: "15", value: "15" },
+                    { title: "16", value: "16" },
+                    { title: "17", value: "17" }
+                ]
+            } 
+        })
+    </script>
+}
+
+
+
